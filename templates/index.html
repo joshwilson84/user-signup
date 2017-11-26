@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Signup</h1>
-    <form method="POST">
+    <form action ="/signup" method="POST">
         <table>
             <tbody>
                 <tr>
@@ -17,7 +17,7 @@
                     </td>
                     <td>
                         <input name = "password" type = "password">
-                        <span class="error">That's not a valid password</span>
+                        <span class="error">{{password_error}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -26,7 +26,7 @@
                     </td>
                     <td>
                         <input name="verify" type="password">
-                        <span class="error">Passwords do not match</span>
+                        <span class="error">{{verify_error}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -35,7 +35,7 @@
                     </td>
                     <td>
                         <input name="email" value="">
-                        <span class="error">That is not a valid Email address</span>
+                        <span class="error">{{email_error}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -44,7 +44,7 @@
                     </td>
                     <td>
                         <input name="username" value="" type="text">
-                        <span class="error"></span>
+                        <span class="error">{{username_error}}</span>
                     </td>
                 </tr>
             </tbody>
