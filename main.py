@@ -46,9 +46,9 @@ def signup():
         verify_error = "Passwords do not match! Try again"
 
 
-        if email != "":  # Validate Email
-            if not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", email):
-                    email_error = "Not a valid email address."
+    if email != "":
+        if not re.match(r"(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)", email):
+            email_error = "Not a valid email address."
     if not username_error and not email_error and password_error or verify_error:
         return render_template(
             "index.html",
@@ -65,7 +65,7 @@ def signup():
         return render_template(
             "index.html",
             username = username,
-            username_error = username,
+            username_error = username_error,
             password_error = password_error,
             verify_error = verify_error,
             email = email,
